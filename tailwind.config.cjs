@@ -9,6 +9,10 @@ module.exports = {
         customYellowHover: '#fff61b',
         customGray: '#2d2e34',
         customGrayHover: '#3d3e45',
+        customPrimary100: '#387478',
+        customPrimary70: '#629584',
+        customPrimary20: '#E2F1E7',
+        customSecondary100: '#243642',
       },
       keyframes: {
         marquee: {

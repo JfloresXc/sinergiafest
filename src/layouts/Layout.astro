@@ -4,15 +4,11 @@ interface Props {
   image?: string;
 }
 
-const {
-  title = "Home",
-  image = "",
-} = Astro.props;
+const { title = "Home", image = "" } = Astro.props;
 
 import { ViewTransitions } from "astro:transitions";
 import "./layout.css";
 import PageFooter from "../components/PageFooter.astro";
-
 ---
 
 <!doctype html>
@@ -31,11 +27,16 @@ import PageFooter from "../components/PageFooter.astro";
     <meta name="twitter:image" content={image} />
     <ViewTransitions fallback="none" />
     <!-- Other head elements -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body class="dark">
     <div class="relative h-screen gap-2 flex items-stretch">
-      <div class=" bg-zinc-900 flex-1 mx-auto overflow-y-auto">
+      <div class="bg-zinc-900 flex-1 mx-auto overflow-y-auto">
         <slot />
       </div>
     </div>
@@ -59,7 +60,7 @@ import PageFooter from "../components/PageFooter.astro";
       window.coloradTimeout = null;
       for (const playlist of document.querySelectorAll(".playlist-item")) {
         playlist.addEventListener("mouseover", () =>
-          onMouseOverColorad(playlist)
+          onMouseOverColorad(playlist),
         );
         playlist.addEventListener("mouseout", onMouseOutColorad);
         playlist.addEventListener("focus", () => onMouseFocusColorad(playlist));
@@ -79,7 +80,7 @@ import PageFooter from "../components/PageFooter.astro";
           if (!dataColor) return;
           window.coloradTimeout = setTimeout(
             () => setContainerColor(dataColor),
-            200
+            200,
           );
         }
       }
@@ -99,7 +100,6 @@ import PageFooter from "../components/PageFooter.astro";
           el.classList.remove("scale-90");
         }
       });
-      
     </script>
   </body>
 </html>

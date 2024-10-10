@@ -1,0 +1,44 @@
+---
+import ButtonLink from "./ButtonLink.astro";
+
+interface Props {
+    title?: string;
+    description?: string;
+}
+
+const {
+    title = "SINERGIAFEST 2024",
+    description = "Conéctate con el futuro de la tecnología, donde la innovación se encuentra con ideas transformadoras para crear un mundo lleno de posibilidades.",
+} = Astro.props;
+---
+
+<section
+    class="text-center py-24 px-32 bg-black relative min-h-[600px] flex flex-col justify-center items-center"
+>
+    <div class="absolute inset-0 w-full z-10 bg-black opacity-50"></div>
+    <img
+        src="/banner.jpg"
+        alt="Background Image"
+        class="absolute inset-0 w-full h-full object-cover opacity-40"
+    />
+    <div class="relative z-10 max-w-4xl mx-auto">
+        <h1
+            class="text-5xl md:text-6xl lg:text-8xl font-extrabold text-[#fff] uppercase"
+        >
+            {title}
+        </h1>
+        <p
+            class="mt-4 text-sm md:text-base lg:text-xl text-gray-300 max-w-3xl mx-auto"
+        >
+            {description}
+        </p>
+        <div class="mt-8 flex justify-center space-x-4">
+            <ButtonLink text="Regístrate" />
+            <a
+                href="#"
+                class="bg-customSecondary100 text-white py-2 px-6 hover:bg-gray-700"
+                >Calendario</a
+            >
+        </div>
+    </div>
+</section>

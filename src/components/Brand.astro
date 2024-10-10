@@ -1,0 +1,13 @@
+---
+import Icon from "astro-icon";
+
+interface Props {
+    size?: "md" | "lg";
+}
+
+const { size = "md" } = Astro.props;
+---
+
+<div class="h-12">
+    <img src="/brand-black.png" alt="Brand Image" class="w-full h-full" />
+</div>
