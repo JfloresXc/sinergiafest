@@ -22,57 +22,79 @@ import Hero from "../components/Hero.astro";
   <div
     id="playlist-container"
     class="relative transition-all duration-1000 bg-context"
-    style="min-height:300px;--context-color:#fff;"
+    style="min-height:300px;--context-color:#fff; "
   >
+    <div id="init"></div>
     <PageHeader />
 
     <Hero />
 
     <Ticker />
 
-    <EventCategories />
+    <div id="playlist-contain">
+      <div
+        id="agenda"
+        class="container max-w-screen-lg mx-auto px-4 pt-24 relative"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <h2
+            class="text-4xl my-8 md:text-5xl lg:text-8xl font-bold text-customSecondary100 text-center"
+          >
+            Agenda de evento
+          </h2>
+          <span></span>
+        </div>
 
-    <p class="mt-4 max-w-2xl mx-auto bg-customPrimary70 px-6 py-12 text-left">
-      Descubre la emoción de la innovación en vivo, celebra la diversidad
-      tecnológica y sumérgete en ideas transformadoras. Prepárate para
-      embarcarte en un viaje extraordinario hacia el futuro de la tecnología.
-    </p>
-
-    <!-- Event slider -->
-    <div class="container max-w-screen-lg mx-auto px-4 mt-24">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <h2
-          class="text-4xl my-8 md:text-5xl lg:text-7xl font-bold text-customSecondary100 text-center"
-        >
-          Event Calendar
-        </h2>
-        <span></span>
+        <EventSlider />
       </div>
 
-      <EventSlider />
+      <!-- Event slider -->
+      <div>
+        <div
+          id="speakers"
+          class="container max-w-screen-lg mx-auto px-4 pt-24 relative"
+        >
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <h2
+              class="text-4xl my-8 md:text-5xl lg:text-8xl font-bold text-customSecondary100 text-center"
+            >
+              <!-- Nuestros speakers -->
+            </h2>
+            <span></span>
+          </div>
+        </div>
+
+        <!-- <HomePagePosts /> -->
+
+        <section class="relative p-4 text-white text-center py-14">
+          <div class="relative z-10 p-10 sm:p-20 bg-customPrimary100 rounded">
+            <h2 class="text-2xl sm:text-5xl font-bold">OBTÉN HOY TU ENTRADA</h2>
+            <p class="mt-4 max-w-2xl mx-auto pb-12 text-sm sm:text-base">
+              Experimente la magia de las nuevas tecnologías. No pierdas la
+              oportunidad de ser parte de la acción. ¡Obtén tu boleto hoy!
+            </p>
+            <!-- <button
+              class="mt-12 px-8 py-4 bg-white text-customSecondary100 hover:opacity-85"
+              >REGÍSTRATE</button
+            > -->
+            <ButtonLink text="Regístrate" />
+            <img
+              src="/singer.png"
+              alt="Background"
+              class="absolute bottom-0 right-9 w-1/4 h-auto object-cover z-0"
+            />
+          </div>
+        </section>
+      </div>
+
+      <PageFooter />
     </div>
-
-    <!-- <HomePagePosts /> -->
-
-    <section class="relative p-4 text-white text-center py-14">
-      <div class="relative z-10 p-20 bg-customGray rounded">
-        <h2 class="text-5xl font-bold">GET YOUR TICKET TODAY</h2>
-        <p class="mt-4 max-w-2xl mx-auto">
-          Experience the thrill, excitement, and magic of upcoming events. Don’t
-          miss your chance to be part of the action – get your ticket today.
-        </p>
-        <button
-          class="mt-12 px-8 py-4 bg-customYellow text-black hover:bg-customYellowHover"
-          >BUY TICKET NOW</button
-        >
-        <img
-          src="/singer.png"
-          alt="Background"
-          class="absolute bottom-0 right-9 w-1/4 h-auto object-cover z-0"
-        />
-      </div>
-    </section>
-
-    <PageFooter />
   </div>
+
+  <style>
+    #playlist-contain {
+      background-color: #ffffff;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cg fill='%23417f83' fill-opacity='0.29'%3E%3Cpath fill-rule='evenodd' d='M5 3.59L1.46.05.05 1.46 3.59 5 .05 8.54l1.41 1.41L5 6.41l3.54 3.54 1.41-1.41L6.41 5l3.54-3.54L8.54.05 5 3.59zM17 2h24v2H17V2zm0 4h24v2H17V6zM2 17h2v24H2V17zm4 0h2v24H6V17z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+  </style>
 </Layout>

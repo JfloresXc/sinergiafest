@@ -1,63 +1,100 @@
-
-<section class="max-w-screen-lg mx-auto p-4 bg-gray-900 text-white">
+<section class="max-w-screen-lg mx-auto p-4 bg-customSecondary100 text-white">
   <div class="flex justify-between items-center mb-4">
-    <h2 class="text-2xl font-bold">Events</h2>
-    <div class="flex space-x-2" id="months-buttons">
+    <h2 class="text-2xl font-bold hidden sm:block">Actividades</h2>
+    <div class="flex gap-2 flex-wrap" id="months-buttons">
       <!-- Month buttons will be dynamically inserted here -->
     </div>
-    <div class="flex space-x-2">
+    <div class="flex gap-2">
       <button id="previous-month" class="p-2 bg-gray-700 rounded">‹</button>
       <button id="next-month" class="p-2 bg-gray-700 rounded">›</button>
     </div>
   </div>
-  <div id="events-list" class="grid grid-cols-2 gap-4">
+  <div id="events-list" class="grid grid-cols-1 gap-4">
     <!-- Events will be dynamically inserted here -->
   </div>
 </section>
 
 <script>
   function initEvents() {
-    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const sections = ["Ponencias", "Talleres", "Feria"];
     let currentMonth = 0;
 
     const events = [
-      { date: "13-14 AUG", name: "KCON 2023 JAKARTA" },
-      { date: "24-26 AUG", name: "FESTIVAL 7 SUNGAI" },
-      { date: "17-18 AUG", name: "HUT INDONESIA" },
-      { date: "26-27 AUG", name: "FESTIVAL REOG PONOROGO" },
-      { date: "27-28 AUG", name: "FESTIVAL JAKARTA" },
-      { date: "29-30 AUG", name: "FESTIVAL BOGOR" }
+      {
+        speaker: "Jose Flores",
+        presentation:
+          "Clean Code y qué tan importante es para el Desarrollo Web",
+        hour: "9:00 AM",
+      },
+      {
+        speaker: "Antonio Ausejo",
+        presentation: "FESTIVAL 7 SUNGAI",
+        hour: "11:00 AM",
+      },
+      {
+        speaker: "Miguel Motta",
+        presentation: "HUT INDONESIA",
+        hour: "12:00 PM",
+      },
+      {
+        speaker: "Keneth Lopez",
+        presentation: "FESTIVAL REOG PONOROGO",
+        hour: "01:00 PM",
+      },
+      {
+        speaker: "Don Ramón",
+        presentation: "FESTIVAL JAKARTA",
+        hour: "03:00 PM",
+      },
+      {
+        speaker: "Daniel Venturi",
+        presentation: "FESTIVAL BOGOR",
+        hour: "05:00 PM",
+      },
     ];
 
     function renderMonths() {
-      const monthsButtons = document.getElementById('months-buttons');
-      monthsButtons.innerHTML = months.map((month, index) => `
-        <button class="p-2 ${currentMonth === index ? 'bg-customYellow text-gray-700' : 'bg-gray-700'}" key=${index}>${month}</button>
-      `).join('');
+      const sectionButtons = document.getElementById("months-buttons");
+      sectionButtons.innerHTML = sections
+        .map(
+          (month, index) => `
+        <button class="p-2 ${currentMonth === index ? "bg-white text-gray-700" : "bg-customPrimary100"}" key=${index}>${month}</button>
+      `,
+        )
+        .join("");
     }
 
     function renderEvents() {
-      const eventsList = document.getElementById('events-list');
-      eventsList.innerHTML = events.map(event => `
-        <div class="p-4 bg-gray-800 rounded">
-          <span class="block text-customYellow">${event.date}</span>
-          <span class="block text-xl font-bold">${event.name}</span>
+      const eventsList = document.getElementById("events-list");
+      eventsList.innerHTML = events
+        .map(
+          (event) => `
+        <div class="p-4 bg-customSecondary120 rounded">
+          <span class="block text-sm sm:text-normal text-white ">${event.speaker}</span>
+          <span class="block text-normal sm:text-xl font-bold uppercase">${event.presentation}</span>
+          <span class="block text-sm sm:text-normal text-customPrimary20 font-extralight">${event.hour}</span>
         </div>
-      `).join('');
+      `,
+        )
+        .join("");
     }
 
     function showPreviousMonth() {
-      currentMonth = (currentMonth - 1 + months.length) % months.length;
+      currentMonth = (currentMonth - 1 + sections.length) % sections.length;
       renderMonths();
     }
 
     function showNextMonth() {
-      currentMonth = (currentMonth + 1) % months.length;
+      currentMonth = (currentMonth + 1) % sections.length;
       renderMonths();
     }
 
-    document.getElementById('previous-month').addEventListener('click', showPreviousMonth);
-    document.getElementById('next-month').addEventListener('click', showNextMonth);
+    document
+      .getElementById("previous-month")
+      .addEventListener("click", showPreviousMonth);
+    document
+      .getElementById("next-month")
+      .addEventListener("click", showNextMonth);
 
     // Initial render
     renderMonths();

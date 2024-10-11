@@ -13,6 +13,7 @@ module.exports = {
         customPrimary70: '#629584',
         customPrimary20: '#E2F1E7',
         customSecondary100: '#243642',
+        customSecondary120: '#141d23',
       },
       keyframes: {
         marquee: {

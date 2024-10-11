@@ -4,7 +4,7 @@ import ButtonLink from "./ButtonLink.astro";
 ---
 
 <div
-  class="relative z-10 py-4 px-32 flex justify-between items-center"
+  class="py-4 px-4 sm:px-32 flex justify-between items-center border-b-2 backdrop-blur-sm sticky top-0 z-50"
   transition:name="page header"
   transition:persist
 >
@@ -16,17 +16,34 @@ import ButtonLink from "./ButtonLink.astro";
     SINERGIAFEST
   </a> -->
   <Brand />
-  <nav>
-    <ul class="flex space-x-8 mt-1 text-customPrimary100">
-      <li><a href="/" class="hover:text-customPrimary70">Inicio</a></li>
-      <li><a href="/agenda" class="hover:text-customPrimary70">Agenda</a></li>
-      <li><a href="/arts" class="hover:text-customPrimary70">Speakers</a></li>
+  <nav class="w-full sm:w-fit">
+    <ul
+      class="flex justify-between items-center space-x-8 w-full mt-1 text-customPrimary100"
+    >
       <li>
-        <a href="/festival" class="hover:text-customPrimary70">Sponsors</a>
+        <a
+          href="/#agenda"
+          class="hover:text-customPrimary70 font-semibold text-sm sm:text-base"
+          >Agenda</a
+        >
+      </li>
+      <li>
+        <a
+          href="/#speakers"
+          class="hover:text-customPrimary70 font-semibold text-sm sm:text-base"
+          >Speakers</a
+        >
+      </li>
+      <li>
+        <a
+          href="/#sponsors"
+          class="hover:text-customPrimary70 font-semibold text-sm sm:text-base"
+          >Sponsors</a
+        >
       </li>
     </ul>
   </nav>
-  <div class="mt-1">
+  <div class="mt-1 hidden sm:block">
     <ButtonLink text="Regístrate" />
   </div>
 </div>

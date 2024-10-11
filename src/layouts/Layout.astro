@@ -8,11 +8,10 @@ const { title = "Home", image = "" } = Astro.props;
 
 import { ViewTransitions } from "astro:transitions";
 import "./layout.css";
-import PageFooter from "../components/PageFooter.astro";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="!scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -32,6 +31,10 @@ import PageFooter from "../components/PageFooter.astro";
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
   </head>
   <body class="dark">
