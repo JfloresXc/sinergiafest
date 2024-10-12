@@ -18,26 +18,33 @@ import ButtonLink from "./ButtonLink.astro";
   <Brand />
   <nav class="w-full sm:w-fit">
     <ul
-      class="flex justify-between items-center space-x-8 w-full mt-1 text-customPrimary100"
+      class="flex justify-between items-center gap-2 sm:gap-8 w-full mt-1 text-customPrimary100 text-center"
     >
       <li>
         <a
           href="/#agenda"
-          class="hover:text-customPrimary70 font-semibold text-sm sm:text-base"
+          class="hover:text-customPrimary70 font-semibold text-xs sm:text-base"
           >Agenda</a
         >
       </li>
       <li>
         <a
           href="/#speakers"
-          class="hover:text-customPrimary70 font-semibold text-sm sm:text-base"
+          class="hover:text-customPrimary70 font-semibold text-xs sm:text-base"
           >Speakers</a
         >
       </li>
       <li>
         <a
+          href="/#communities"
+          class="hover:text-customPrimary70 font-semibold text-xs sm:text-base"
+          >Comunidades</a
+        >
+      </li>
+      <li class="hidden sm:block">
+        <a
           href="/#sponsors"
-          class="hover:text-customPrimary70 font-semibold text-sm sm:text-base"
+          class="hover:text-customPrimary70 font-semibold text-xs sm:text-base"
           >Sponsors</a
         >
       </li>
