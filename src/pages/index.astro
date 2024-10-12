@@ -35,7 +35,9 @@ import ComunnitiesList from "../components/ComunnitiesList.astro";
 
     <div id="playlist-contain">
       <div id="agenda">
-        <div class="container max-w-screen-lg mx-auto px-4 py-24 relative">
+        <div
+          class="container max-w-screen-lg mx-auto px-4 py-12 sm:py-24 relative"
+        >
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <h2
               class="text-4xl my-8 md:text-5xl lg:text-8xl font-bold text-customSecondary100 text-center"
@@ -49,8 +51,10 @@ import ComunnitiesList from "../components/ComunnitiesList.astro";
         </div>
       </div>
 
-      <div id="speakers" class="bg-customPrimary100">
-        <div class="container max-w-screen-lg mx-auto px-4 py-24 relative">
+      <div id="speakers" class="bg-customSecondary120">
+        <div
+          class="container max-w-screen-lg mx-auto px-4 py-12 sm:py-24 relative"
+        >
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <h2
               class="text-4xl my-8 md:text-5xl lg:text-8xl font-bold text-white text-center"
@@ -63,7 +67,6 @@ import ComunnitiesList from "../components/ComunnitiesList.astro";
           <SpeakersList />
         </div>
       </div>
-      <Ticker />
 
       <section class="relative text-white text-center">
         <div

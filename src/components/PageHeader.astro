@@ -4,21 +4,38 @@ import ButtonLink from "./ButtonLink.astro";
 ---
 
 <div
-  class="py-4 px-4 sm:px-32 flex justify-between items-center border-b-2 backdrop-blur-sm sticky top-0 z-50"
+  class="py-4 px-4 sm:px-32 flex justify-between items-center border-b-2 bg-white sticky top-0 z-50"
   transition:name="page header"
   transition:persist
 >
-  <!-- <a
-    href="/"
-    aria-label="go back to home page"
-    class="text-2xl font-bold text-black"
-  >
-    SINERGIAFEST
-  </a> -->
   <Brand />
-  <nav class="w-full sm:w-fit">
+
+  <!-- Botón "Hamburguesa" para móvil -->
+  <button
+    class="sm:hidden block text-customSecondary100 focus:outline-none"
+    aria-label="Toggle Menu"
+    id="button-bar"
+  >
+    <svg
+      class="w-6 h-6"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16m-7 6h7"></path>
+    </svg>
+  </button>
+  <nav
+    id="navbar"
+    class="w-full h-full sm:w-fit fixed sm:relative top-14 sm:top-0 right-0 sm:right-0 backdrop-blur-sm bg-customSecondary100/30 sm:bg-transparent flex justify-end"
+  >
     <ul
-      class="flex justify-between items-center gap-2 sm:gap-8 w-full mt-1 text-customPrimary100 text-center"
+      class="w-full sm:w-full h-fit mr-5 ml-1 sm:m-0 bg-customSecondary100 sm:bg-transparent flex flex-col sm:flex-row justify-between items-end sm:items-center gap-2 p-2 sm:gap-8 mt-1 text-white sm:text-customSecondary100 text-center"
     >
       <li>
         <a
@@ -54,3 +71,15 @@ import ButtonLink from "./ButtonLink.astro";
     <ButtonLink text="Regístrate" />
   </div>
 </div>
+
+<script>
+  let isOpen = false;
+  const navbarElement = document.getElementById("navbar");
+
+  document.getElementById("button-bar")?.addEventListener("click", () => {
+    isOpen = !isOpen;
+    if (isOpen) {
+    }
+    navbarElement?.classList.toggle("hidden", isOpen);
+  });
+</script>

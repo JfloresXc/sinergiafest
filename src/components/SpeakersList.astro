@@ -1,5 +1,9 @@
-<section class="p-4 bg-white text-customSecondary100">
-    <ul id="speakers-list" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></ul>
+<section class="p-1 bg-white text-customSecondary100">
+    <ul
+        id="speakers-list"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1"
+    >
+    </ul>
 </section>
 
 <script>
@@ -14,7 +18,7 @@
             {
                 speaker: "Carlos Perez",
                 profesion:
-                    "Filósofo Práctico ☕️| Consultor Ágil 🎯 | Filósofo Organizacional 💼 | Consultor Filosófico 💡| Gestor del cambio 🔑| Líder Servicial ❤️| Jurado Oficial del HHI Perú🏆",
+                    "Filósofo Práctico ☕️| Gestor del cambio 🔑| Líder Servicial ❤️| Jurado Oficial del HHI Perú🏆",
                 url: "carlos-perez.jpg",
             },
             {
@@ -40,10 +44,10 @@
             speakersList.innerHTML = speakers
                 .map(
                     (event) => `
-          <li class="px-4 py-10 sm:px-16 bg-customPrimary100 text-white rounded flex flex-col justify-center items-center gap-5 cursor-pointer transition ease-in-out delay-150 duration-100 hover:opacity-50">
-            <img src="speakers/${event.url}" class="w-1/2 sm:w-56 text-center rounded-full"/>
-            <span class="block text-normal sm:text-2xl font-bold uppercase">${event.speaker}</span>
-            <span class="block text-sm sm:text-normal font-extralight text-center">${event.profesion}</span>
+          <li class="px-4 py-10 sm:px-16 bg-customSecondary120 text-white rounded flex flex-col items-center gap-5 cursor-pointer transition ease-in-out delay-100 duration-100 hover:opacity-85 text-center">
+            <img src="speakers/${event.url}" class="w-1/2 sm:w-56 rounded-full border-2 border-white"/>
+            <span class="block text-normal sm:text-xl font-bold uppercase">${event.speaker}</span>
+            <span class="block text-sm sm:text-normal font-extralight">${event.profesion}</span>
             <span class="flex gap-4">
                 <a href="#" class=""
                 ><i class="fab fa-linkedin"></i></a
