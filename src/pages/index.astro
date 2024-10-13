@@ -1,20 +1,11 @@
 ---
 import PageHeader from "../components/PageHeader.astro";
 import PageFooter from "../components/PageFooter.astro";
-import EventSlider from "../components/EventSlider.astro";
-
-import HomePagePosts from "../components/Blog/HomePagePosts.astro";
-
-import BannerEvents from "../components/BannerEvents.astro";
-import { playlists, morePlaylists } from "../lib/data";
-
-import EventsTable from "../components/EventsTable.astro";
-import EventCategories from "../components/EventCategories.astro";
+import Agenda from "../components/Agenda.astro";
 import Ticker from "../components/Ticker.astro";
 
 import Layout from "../layouts/Layout.astro";
 import ButtonLink from "../components/ButtonLink.astro";
-import Brand from "../components/Brand.astro";
 import Hero from "../components/Hero.astro";
 import SpeakersList from "../components/SpeakersList.astro";
 import ComunnitiesList from "../components/ComunnitiesList.astro";
@@ -34,7 +25,7 @@ import ComunnitiesList from "../components/ComunnitiesList.astro";
     <Ticker />
 
     <div id="playlist-contain">
-      <div id="agenda">
+      <div id="agenda" class="min-h-screen">
         <div
           class="container max-w-screen-lg mx-auto px-4 py-12 sm:py-24 relative"
         >
@@ -47,7 +38,7 @@ import ComunnitiesList from "../components/ComunnitiesList.astro";
             <span></span>
           </div>
 
-          <EventSlider />
+          <Agenda />
         </div>
       </div>
 

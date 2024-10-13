@@ -1,83 +1,75 @@
+---
+import { SPEAKERS } from "../lib/speakers";
+---
+
 <section class="p-1 text-customSecondary100">
     <ul
         id="speakers-list"
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 border-x-2"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 border-l-2"
     >
+        {
+            SPEAKERS.map((event) => (
+                <li class="px-4 py-10 sm:px-12 bg-transparent text-white  flex flex-col items-center gap-5  transition ease-in-out delay-100 duration-100  text-center border-4 border-white">
+                    <img
+                        src={`/speakers/${event.url}`}
+                        class="w-2/4 sm:w-48 rounded-full border-2 border-white"
+                    />
+                    <span class="block text-base sm:text-xl font-bold uppercase">
+                        {event.speaker}
+                    </span>
+                    <span class="block text-sm sm:text-base font-extralight">
+                        {event.profesion}
+                    </span>
+                    <span class="flex gap-4">
+                        <a
+                            href={event.urlLinkedin}
+                            target="_blank"
+                            class="hover:opacity-75"
+                        >
+                            <i class="fab fa-linkedin" />
+                        </a>
+                        <a
+                            href={event.urlLinkedin}
+                            target="_blank"
+                            class="hover:opacity-75"
+                        >
+                            <i class="fab fa-instagram" />
+                        </a>
+                    </span>
+                </li>
+            ))
+        }
     </ul>
 </section>
 
 <script>
-    function initspeakers() {
-        const speakers = [
-            {
-                speaker: "Jose Flores",
-                profesion:
-                    "Desarrollador web 🧑🏻‍🚀 | Presidente Área de Programación IEEE CS 🚀 | Ingeniero de Sistemas 🏗️",
-                url: "jose-flores.png",
-                urlLinkedin: "https://www.linkedin.com/in/jfloresxc/",
-            },
-            {
-                speaker: "Carlos Perez",
-                profesion:
-                    "Filósofo Práctico ☕️| Gestor del cambio 🔑| Líder Servicial ❤️| Jurado Oficial del HHI Perú🏆",
-                url: "carlos-perez.jpg",
-                urlLinkedin: "https://www.linkedin.com/in/carpercharly/",
-            },
-            {
-                speaker: "Nefi Arroyo",
-                profesion: "Tech Owner of AWS availability",
-                url: "nefi-arroyo.jpg",
-                urlLinkedin: "https://www.linkedin.com/in/nefiarroyo/",
-            },
-            {
-                speaker: "Antonella Ochoa",
-                profesion: "Project Analyst | PSM I | Customer Experience",
-                url: "antonella-ochoa.jpg",
-                urlLinkedin:
-                    "https://www.linkedin.com/in/antonella-ochoa-68564089/",
-            },
-            {
-                speaker: "Yancel Salinas",
-                profesion:
-                    "Production Engineer at Zebrands | Lead Google Developer Group Open | SRE | DevOps | Python | Go | GCP | AWS",
-                url: "yancel-salinas.jpg",
-                urlLinkedin: "https://www.linkedin.com/in/sagoyanfisic/",
-            },
-            {
-                speaker: "Emelyn Alvino",
-                profesion:
-                    "Corporate Talent Acquisition Analyst at AENZA💙🤍👷🏻‍♀️ | Headhunter | Employer Branding | HR Automation | People Analytics",
-                url: "emelyn-alvino.jpeg",
-                urlLinkedin: "https://www.linkedin.com/in/cristinaalvino/",
-            },
-        ];
+    // import { SPEAKERS } from "../lib/speakers";
 
-        function renderspeakers() {
-            const speakersList = document.getElementById("speakers-list");
-            speakersList.innerHTML = speakers
-                .map(
-                    (event) => `
-          <li class="px-4 py-10 sm:px-16 bg-transparent text-white  flex flex-col items-center gap-5 cursor-pointer transition ease-in-out delay-100 duration-100 hover:opacity-85 text-center border-4 border-white">
-            <img src="speakers/${event.url}" class="w-1/4 sm:w-48 rounded-full border-2 border-white"/>
-            <span class="block text-normal sm:text-xl font-bold uppercase">${event.speaker}</span>
-            <span class="block text-sm sm:text-normal font-extralight">${event.profesion}</span>
-            <span class="flex gap-4">
-                <a href="${event.urlLinkedin}" target="_blank"
-                ><i class="fab fa-linkedin"></i></a
-                >
-                <a href="${event.urlLinkedin}" target="_blank"
-                ><i class="fab fa-instagram"></i></a
-                >
-            </span>
-          </li>
-        `,
-                )
-                .join("");
-        }
+    // function initspeakers() {
+    //     function renderspeakers() {
+    //         const speakersList = document.getElementById("speakers-list");
+    //         speakersList.innerHTML = SPEAKERS.map(
+    //             (event) => `
+    //       <li class="px-4 py-10 sm:px-12 bg-transparent text-white  flex flex-col items-center gap-5  transition ease-in-out delay-100 duration-100 hover:opacity-85 text-center border-4 border-white">
+    //         <img src="speakers/${event.url}" class="w-2/4 sm:w-48 rounded-full border-2 border-white"/>
+    //         <span class="block text-base sm:text-xl font-bold uppercase">${event.speaker}</span>
+    //         <span class="block text-sm sm:text-base font-extralight">${event.profesion}</span>
+    //         <span class="flex gap-4">
+    //             <a href="${event.urlLinkedin}" target="_blank"
+    //             ><i class="fab fa-linkedin"></i></a
+    //             >
+    //             <a href="${event.urlLinkedin}" target="_blank"
+    //             ><i class="fab fa-instagram"></i></a
+    //             >
+    //         </span>
+    //       </li>
+    //     `,
+    //         ).join("");
+    //     }
 
-        renderspeakers();
-    }
+    //     renderspeakers();
+    // }
 
     // Initial render when the page loads
-    initspeakers();
+    // initspeakers();
 </script>

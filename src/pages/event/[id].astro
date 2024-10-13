@@ -8,9 +8,6 @@ import Layout from "../../layouts/Layout.astro";
 import { allPlaylists } from "../../lib/data";
 import PageFooter from "../../components/PageFooter.astro";
 
-import BannerEvents from "../../components/BannerEvents.astro";
-import { playlists, morePlaylists } from "../../lib/data";
-
 export function getStaticPaths() {
   return allPlaylists.map((playlist) => ({
     params: {
@@ -24,7 +21,7 @@ const playlist = allPlaylists.find((playlist) => playlist.id === id);
 
 <Layout image={playlist?.cover} title={playlist?.title || "404"}>
   <div
-    class="relative bg-zinc-900 min-h-full flex flex-col overflow-x-hidden "
+    class="relative bg-zinc-900 min-h-full flex flex-col overflow-x-hidden"
     transition:name=`playlist ${playlist?.id} box`
   >
     <PageHeader />
@@ -55,18 +52,21 @@ const playlist = allPlaylists.find((playlist) => playlist.id === id);
           <div class="text-sm">
             <EventAddress artists={playlist?.artists || []} />
             <div class="mt-1">
-              <span class="font-semibold"> {playlist?.date}</span
-              >
+              <span class="font-semibold"> {playlist?.date}</span>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="bg-zinc-900/30 mt-6 flex-1 p-6 blur-100 ">
+    <div class="bg-zinc-900/30 mt-6 flex-1 p-6 blur-100">
       <div class="flex gap-1 items-center">
-        <div class="ml-4" >
-          <a href="#" class="bg-customYellow text-black py-2 px-6 hover:bg-customYellowHover">Buy Tickets</a>
+        <div class="ml-4">
+          <a
+            href="#"
+            class="bg-customYellow text-black py-2 px-6 hover:bg-customYellowHover"
+            >Buy Tickets</a
+          >
         </div>
         <LikeButton />
         <DotsButton />
@@ -76,10 +76,14 @@ const playlist = allPlaylists.find((playlist) => playlist.id === id);
           <div>
             <h3 class="text-2xl font-semibold mb-2">Overview:</h3>
             <p class="text-gray-400">
-              Experience the ultimate concert event, where music comes alive and memories are made. Join us for an unforgettable evening filled with electrifying performances and soul-stirring melodies. Dive into the rhythm and let the music take you on a journey of pure bliss.
+              Experience the ultimate concert event, where music comes alive and
+              memories are made. Join us for an unforgettable evening filled
+              with electrifying performances and soul-stirring melodies. Dive
+              into the rhythm and let the music take you on a journey of pure
+              bliss.
             </p>
           </div>
-        
+
           <div>
             <h3 class="text-2xl font-semibold mb-2">Artists Lineup:</h3>
             <ul class="list-disc list-inside text-gray-400">
@@ -89,69 +93,85 @@ const playlist = allPlaylists.find((playlist) => playlist.id === id);
               <li>Soulful Strings</li>
             </ul>
           </div>
-        
+
           <div>
             <h3 class="text-2xl font-semibold mb-2">Event Highlights:</h3>
             <ul class="list-disc list-inside text-gray-400">
               <li>
-                <span class="font-bold">Live Performances:</span> Enjoy captivating live performances from top artists, showcasing a blend of genres that will keep you dancing all night long.
+                <span class="font-bold">Live Performances:</span> Enjoy captivating
+                live performances from top artists, showcasing a blend of genres
+                that will keep you dancing all night long.
               </li>
               <li>
-                <span class="font-bold">Interactive Sessions:</span> Engage with artists in interactive sessions, where you can learn about their music, inspiration, and creative process.
+                <span class="font-bold">Interactive Sessions:</span> Engage with
+                artists in interactive sessions, where you can learn about their
+                music, inspiration, and creative process.
               </li>
               <li>
-                <span class="font-bold">Food & Beverages:</span> Savor a variety of delicious food and drink options from our curated selection of vendors, ensuring a delightful culinary experience.
+                <span class="font-bold">Food & Beverages:</span> Savor a variety
+                of delicious food and drink options from our curated selection of
+                vendors, ensuring a delightful culinary experience.
               </li>
               <li>
-                <span class="font-bold">Merchandise:</span> Grab exclusive event merchandise, including T-shirts, posters, and memorabilia to remember this extraordinary night.
+                <span class="font-bold">Merchandise:</span> Grab exclusive event
+                merchandise, including T-shirts, posters, and memorabilia to remember
+                this extraordinary night.
               </li>
             </ul>
           </div>
-        
+
           <div>
             <h3 class="text-2xl font-semibold mb-2">Additional Information:</h3>
             <ul class="list-disc list-inside text-gray-400">
               <li>
-                <span class="font-bold">Parking:</span> Available on-site with easy access to the venue.
+                <span class="font-bold">Parking:</span> Available on-site with easy
+                access to the venue.
               </li>
               <li>
-                <span class="font-bold">Accessibility:</span> The event is accessible to all, with special arrangements for individuals with disabilities.
+                <span class="font-bold">Accessibility:</span> The event is accessible
+                to all, with special arrangements for individuals with disabilities.
               </li>
               <li>
-                <span class="font-bold">Security:</span> Enhanced security measures will be in place to ensure the safety and well-being of all attendees.
+                <span class="font-bold">Security:</span> Enhanced security measures
+                will be in place to ensure the safety and well-being of all attendees.
               </li>
             </ul>
           </div>
-        
+
           <div>
             <h3 class="text-2xl font-semibold mb-2">Tickets:</h3>
             <ul class="list-disc list-inside text-gray-400">
               <li>General Admission: $50</li>
-              <li>VIP Pass: $100 (Includes backstage access and meet-and-greet with artists)</li>
+              <li>
+                VIP Pass: $100 (Includes backstage access and meet-and-greet
+                with artists)
+              </li>
               <li>Early Bird Discounts available until April 30, 2023</li>
             </ul>
           </div>
-        
+
           <div>
             <h3 class="text-2xl font-semibold mb-2">Contact:</h3>
             <p class="text-gray-400">
-              For more information, visit our website or contact us at <a href="mailto:info@example.com" class="text-blue-500">info@example.com</a>.
+              For more information, visit our website or contact us at <a
+                href="mailto:info@example.com"
+                class="text-blue-500">info@example.com</a
+              >.
             </p>
             <p class="text-gray-400">
-              Join us at Vibe Wave for an evening of unforgettable music, vibrant energy, and lasting memories. Get your tickets now and be part of an extraordinary musical journey!
+              Join us at Vibe Wave for an evening of unforgettable music,
+              vibrant energy, and lasting memories. Get your tickets now and be
+              part of an extraordinary musical journey!
             </p>
           </div>
         </div>
-        
-        
       </div>
     </div>
 
     <div
-      class="absolute h-screen inset-0 z-[-1] bg-gradient-to-b "
+      class="absolute h-screen inset-0 z-[-1] bg-gradient-to-b"
       style=`--context-color:${playlist?.color.accent}`
     >
-    
       <div
         class="absolute inset-0 bg-gradient-to-t via-transparent from-zinc-900"
       >
@@ -167,7 +187,6 @@ const playlist = allPlaylists.find((playlist) => playlist.id === id);
     </div> -->
 
     <PageFooter />
-
   </div>
 </Layout>
 

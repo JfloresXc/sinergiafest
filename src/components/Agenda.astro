@@ -1,0 +1,146 @@
+---
+import { PANELS } from "../lib/panels";
+import { PRESENTATIONS } from "../lib/presentations";
+const SECTIONS = ["Paneles", "Ponencias", "Feria"];
+const currentSection = 0;
+---
+
+<section class="max-w-screen-lg mx-auto p-4 bg-customSecondary100 text-white">
+  <div class="flex justify-between items-center mb-4">
+    <div class="flex gap-2 flex-wrap">
+      {
+        SECTIONS.map((event, index) => (
+          <button
+            class={`event-button p-2 hover:opacity-75 transition ease-linear ${currentSection === index ? "bg-white text-gray-700" : "bg-customPrimary100"}`}
+          >
+            {event}
+          </button>
+        ))
+      }
+    </div>
+    <div class="flex gap-2">
+      <button
+        id="previous-button"
+        class="p-2 bg-customPrimary100 rounded hover:opacity-75 transition ease-linear"
+        >‹</button
+      >
+      <button
+        id="next-button"
+        class="p-2 bg-customPrimary100 rounded hover:opacity-75 transition ease-linear"
+        >›</button
+      >
+    </div>
+  </div>
+  <ul id="panels-list" class="event-list grid grid-cols-1 gap-4">
+    {
+      PANELS.map((event, index) => (
+        <a
+          href={`/panel/${event.id}`}
+          class="p-4 bg-gradient-to-r from-[#243642] to-[#010507] rounded cursor-pointer hover:opacity-75 transition ease-linear"
+        >
+          <span class="block text-base sm:text-xl font-bold uppercase pb-2">
+            PANEL #{index + 1} {event.title}
+          </span>
+          <span class="block text-xs sm:text-sm text-white ">
+            {event.description.slice(0, 100)}...
+          </span>
+        </a>
+      ))
+    }
+  </ul>
+  <ul id="presentations-list" class="event-list hidden grid-cols-1 gap-4">
+    {
+      PRESENTATIONS.map((event, index) => (
+        <a
+          href={`/panel/${event.id}`}
+          class="p-4 bg-gradient-to-r from-[#243642] to-[#010507] rounded cursor-pointer hover:opacity-75 transition ease-linear"
+        >
+          <span class="block text-base sm:text-xl font-bold uppercase pb-2">
+            PANEL #{index + 1} {event.title}
+          </span>
+          <span class="block text-xs sm:text-sm text-white ">
+            {event.description.slice(0, 100)}...
+          </span>
+        </a>
+      ))
+    }
+  </ul>
+  <ul id="presentations-list" class="event-list hidden grid-cols-1 gap-4">
+    {
+      PRESENTATIONS.map((event, index) => (
+        <a
+          href={`/panel/${event.id}`}
+          class="p-4 bg-gradient-to-r from-[#243642] to-[#010507] rounded cursor-pointer hover:opacity-75 transition ease-linear"
+        >
+          <span class="block text-base sm:text-xl font-bold uppercase pb-2">
+            PANEL #{index + 1} {event.title}
+          </span>
+          <span class="block text-xs sm:text-sm text-white ">
+            {event.description.slice(0, 100)}...
+          </span>
+        </a>
+      ))
+    }
+  </ul>
+</section>
+
+<script>
+  function initEvents() {
+    const eventListElement = document.querySelectorAll(".event-list");
+    const eventButtonsElement = document.querySelectorAll(".event-button");
+    let currentIndexEventList = 0;
+    const amountOfEvents = 3;
+
+    function showEventList({ index = 0 }) {
+      eventButtonsElement.forEach((list) => {
+        list.classList.remove("bg-white");
+        list.classList.remove("text-gray-700");
+        list.classList.add("bg-customPrimary100");
+      });
+
+      eventButtonsElement[index].classList.add("bg-white");
+      eventButtonsElement[index].classList.add("text-gray-700");
+      currentIndexEventList = index;
+
+      eventListElement.forEach((list) => {
+        list.classList.add("hidden");
+        list.classList.remove("grid");
+      });
+
+      eventListElement[index].classList.remove("hidden");
+      eventListElement[index].classList.add("grid");
+    }
+
+    eventButtonsElement.forEach((button, index) => {
+      button.addEventListener("click", () => {
+        showEventList({ index });
+      });
+    });
+
+    function showPreviousEvent() {
+      showEventList({
+        index:
+          currentIndexEventList != 0
+            ? currentIndexEventList - 1
+            : amountOfEvents - 1,
+      });
+    }
+
+    function showNextEvent() {
+      showEventList({
+        index:
+          currentIndexEventList != amountOfEvents - 1
+            ? currentIndexEventList + 1
+            : currentIndexEventList + 1 - amountOfEvents,
+      });
+    }
+
+    const previousButtonElement = document.getElementById("previous-button");
+    const nextButtonElement = document.getElementById("next-button");
+
+    previousButtonElement?.addEventListener("click", showPreviousEvent);
+    nextButtonElement?.addEventListener("click", showNextEvent);
+  }
+
+  initEvents();
+</script>
