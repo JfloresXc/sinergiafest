@@ -11,12 +11,15 @@ import ButtonLink from "./ButtonLink.astro";
   <Brand />
 
   <!-- Botón "Hamburguesa" para móvil -->
+  <!-- Botón que cambia entre hamburguesa y "X" -->
   <button
+    id="menuButton"
     class="sm:hidden block text-customSecondary100 focus:outline-none"
     aria-label="Toggle Menu"
-    id="button-bar"
   >
+    <!-- Ícono de menú hamburguesa por defecto -->
     <svg
+      id="hamburgerIcon"
       class="w-6 h-6"
       fill="none"
       stroke="currentColor"
@@ -29,13 +32,28 @@ import ButtonLink from "./ButtonLink.astro";
         stroke-width="2"
         d="M4 6h16M4 12h16m-7 6h7"></path>
     </svg>
+    <!-- Ícono de "X", oculto inicialmente -->
+    <svg
+      id="closeIcon"
+      class="w-6 h-6 hidden"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
   </button>
   <nav
-    id="navbar"
-    class="w-full h-full sm:w-fit fixed sm:relative top-14 sm:top-0 right-0 sm:right-0 backdrop-blur-sm bg-customSecondary100/30 sm:bg-transparent flex justify-end"
+    id="menu"
+    class="w-full h-full sm:w-fit fixed sm:relative top-14 sm:top-0 right-0 sm:right-0 backdrop-blur-sm bg-customSecondary100/30 sm:bg-transparent hidden sm:flex justify-end transition-all ease-linear"
   >
     <ul
-      class="w-full sm:w-full h-fit mr-5 ml-1 sm:m-0 bg-customSecondary100 sm:bg-transparent flex flex-col sm:flex-row justify-between items-end sm:items-center gap-2 p-2 sm:gap-8 mt-1 text-white sm:text-customSecondary100 text-center"
+      class="w-full sm:w-full h-fit mr-5 ml-1 sm:m-0 bg-customSecondary100 sm:bg-transparent flex flex-col sm:flex-row justify-between items-end sm:items-center gap-4 p-4 sm:p-0 sm:gap-8 mt-1 text-white sm:text-customSecondary100 text-center"
     >
       <li>
         <a
@@ -58,7 +76,7 @@ import ButtonLink from "./ButtonLink.astro";
           >Comunidades</a
         >
       </li>
-      <li class="hidden sm:block">
+      <li>
         <a
           href="/#sponsors"
           class="hover:text-customPrimary70 font-semibold text-xs sm:text-base"
@@ -73,13 +91,25 @@ import ButtonLink from "./ButtonLink.astro";
 </div>
 
 <script>
-  let isOpen = false;
-  const navbarElement = document.getElementById("navbar");
+  const menuButton = document.getElementById("menuButton");
+  const menu = document.getElementById("menu");
+  const hamburgerIcon = document.getElementById("hamburgerIcon");
+  const closeIcon = document.getElementById("closeIcon");
 
-  document.getElementById("button-bar")?.addEventListener("click", () => {
-    isOpen = !isOpen;
+  menuButton.addEventListener("click", () => {
+    const isOpen = menu.classList.contains("hidden");
+
+    // Toggle visibility of the menu
     if (isOpen) {
+      menu.classList.remove("hidden");
+      menu.classList.add("flex");
+    } else {
+      menu.classList.add("hidden");
+      menu.classList.remove("flex");
     }
-    navbarElement?.classList.toggle("hidden", isOpen);
+
+    // Toggle icons
+    hamburgerIcon.classList.toggle("hidden");
+    closeIcon.classList.toggle("hidden");
   });
 </script>

@@ -83,7 +83,8 @@ body {
   animation: spawn 2s ease-in-out forwards;
 }
 
-.scotch-container:hover:after {
+/* .scotch-container:hover:after { */
+.scotch-container:after {
   content: "";
   display: flex;
   position: absolute;

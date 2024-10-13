@@ -78,9 +78,9 @@
       const eventsList = document.getElementById("events-list");
       eventsList.innerHTML = events
         .map(
-          (event) => `
-        <div class="p-4 bg-customSecondary120 rounded">
-          <span class="block text-normal sm:text-xl font-bold uppercase pb-2">${event.presentation}</span>
+          (event, index) => `
+        <div class="p-4 bg-gradient-to-r from-[#243642] to-[#010507] rounded">
+          <span class="block text-normal sm:text-xl font-bold uppercase pb-2">PANEL #${index + 1}: ${event.presentation}</span>
           <span class="block text-xs sm:text-normal text-white ">${event.speaker}</span>
           <span class="block text-xs sm:text-normal text-customPrimary20 font-extralight">${event.hour}</span>
         </div>
