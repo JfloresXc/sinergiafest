@@ -4,7 +4,7 @@ import ButtonLink from "./ButtonLink.astro";
 ---
 
 <div
-  class="py-4 px-4 sm:px-32 flex justify-between items-center border-b-2 bg-white sticky top-0 z-50"
+  class="py-4 px-4 md:px-32 flex justify-between items-center border-b-4 bg-white sticky top-0 z-50"
   transition:name="page header"
   transition:persist
 >
@@ -14,7 +14,7 @@ import ButtonLink from "./ButtonLink.astro";
   <!-- Botón que cambia entre hamburguesa y "X" -->
   <button
     id="menuButton"
-    class="sm:hidden block text-customSecondary100 focus:outline-none"
+    class="md:hidden block text-customSecondary100 focus:outline-none"
     aria-label="Toggle Menu"
   >
     <!-- Ícono de menú hamburguesa por defecto -->
@@ -50,7 +50,7 @@ import ButtonLink from "./ButtonLink.astro";
   </button>
   <nav
     id="menu"
-    class="w-full h-full sm:w-fit fixed sm:relative top-14 sm:top-0 right-0 sm:right-0 backdrop-blur-sm bg-customSecondary100/30 sm:bg-transparent hidden sm:flex justify-end transition-all ease-linear"
+    class="w-full h-full md:w-fit fixed sm:relative top-14 sm:top-0 right-0 sm:right-0 backdrop-blur-sm bg-customSecondary100/30 sm:bg-transparent hidden md:flex justify-end transition-all ease-linear"
   >
     <ul
       class="w-full sm:w-full h-fit mr-1 ml-1 sm:m-0 bg-customSecondary100 sm:bg-transparent flex flex-col sm:flex-row justify-between items-end sm:items-center gap-4 p-4 sm:p-0 sm:gap-8 mt-1 text-white sm:text-customSecondary100 text-center"
@@ -85,7 +85,7 @@ import ButtonLink from "./ButtonLink.astro";
       </li>
     </ul>
   </nav>
-  <div class="mt-1 hidden sm:block">
+  <div class="mt-1 hidden md:block">
     <ButtonLink text="Regístrate" />
   </div>
 </div>

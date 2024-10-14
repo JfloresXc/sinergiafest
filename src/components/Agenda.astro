@@ -1,8 +1,9 @@
 ---
 import { PANELS } from "../lib/panels";
 import { PRESENTATIONS } from "../lib/presentations";
+import { COMPANIES_LIST } from "../lib/fair";
 import ButtonLink from "./ButtonLink.astro";
-const SECTIONS = ["Paneles", "Ponencias", "Feria"];
+const SECTIONS = ["Paneles", "Feria", "Ponencias"];
 const currentSection = 0;
 ---
 
@@ -32,43 +33,58 @@ const currentSection = 0;
       >
     </div>
   </div>
-  <ul id="panels-list" class="event-list grid grid-cols-1 gap-4">
+  <ul id="panels-list" class="event-list grid grid-cols-1 gap-5">
     {
       PANELS.map((event, index) => (
         <a
           href={`/panel/${event.id}`}
-          class="p-4 bg-gradient-to-r from-[#243642] to-[#010507] rounded cursor-pointer hover:opacity-75 transition ease-linear"
+          class="p-4 bg-gradient-to-r from-[#010507] to-[#243642] rounded cursor-pointer hover:opacity-75 transition ease-linear"
         >
-          <span class="block text-base sm:text-xl font-bold uppercase pb-2">
+          <span class="block text-base sm:text-xl font-bold uppercase ">
             PANEL #{index + 1} {event.title}
           </span>
-          <span class="block text-xs sm:text-sm text-white ">
-            {event.description.slice(0, 100)}...
-          </span>
+          <div class="text-sm font-light mt-2 flex flex-wrap gap-2 lg:gap-8 items-center">
+            <div class="flex gap-2 items-center">
+              <i class="fas fa-clock text-customPrimary20" />
+              <span class="">{event?.date}</span>
+            </div>
+            <div class="flex gap-2 items-center">
+              <i class="fas fa-map-marker-alt text-customPrimary20" />
+              <span>{event?.address}</span>
+            </div>
+          </div>
+          <div class="flex justify-end md:justify-normal  mt-2">
+            <span class="text-end font-extralight border-b-2 text-sm">
+              Leer más
+            </span>
+          </div>
         </a>
       ))
     }
   </ul>
-  <ul id="presentations-list" class="event-list hidden grid-cols-1 gap-4">
+  <ul
+    id="presentations-list"
+    class="event-list hidden grid-cols-1 md:grid-cols-2 gap-4"
+  >
     {
-      PRESENTATIONS.map((event, index) => (
+      COMPANIES_LIST.map((event) => (
         <a
-          href={`/panel/${event.id}`}
-          class="p-4 bg-gradient-to-r from-[#243642] to-[#010507] rounded cursor-pointer hover:opacity-75 transition ease-linear"
+          href={event.urlExternal}
+          target="_blank"
+          class="p-8 bg-customPrimary100 rounded cursor-pointer hover:opacity-75 transition ease-linear flex flex-col justify-center items-center gap-2 text-center "
         >
+          <img
+            src={`/fair/${event.imgPreview}`}
+            class="w-2/4 sm:w-48 rounded-full"
+          />
           <span class="block text-base sm:text-xl font-bold uppercase pb-2">
-            PANEL #{index + 1} {event.title}
-          </span>
-          <span class="block text-xs sm:text-sm text-white ">
-            {event.description.slice(0, 100)}...
+            {event.title}
           </span>
         </a>
       ))
     }
-  </ul>
-  <ul id="presentations-list" class="event-list hidden grid-cols-1 gap-4">
     <div
-      class="relative z-10 p-10 sm:p-20 bg-customPrimary100 rounded scotch-container"
+      class="relative z-10 p-10 sm:p-20 bg-customPrimary100 rounded scotch-container sm:col-span-2 text-center"
     >
       <h2 class="text-2xl sm:text-5xl font-bold">INSCRÍBETE A LA FERIA</h2>
       <p class="mt-4 max-w-2xl mx-auto pb-12 text-sm sm:text-base">
@@ -80,6 +96,42 @@ const currentSection = 0;
       <ButtonLink
         text="Inscríbete"
         link="https://docs.google.com/forms/d/e/1FAIpQLSfuzdIH5pwWGAcNyFVHkWLy8fOv5mt8YlacWdghwNFlsdPadg/viewform"
+      />
+    </div>
+  </ul>
+  <ul id="presentations-list" class="event-list hidden grid-cols-1 gap-4">
+    {
+      PRESENTATIONS.map((event, index) => (
+        <a
+          href={`/panel/${event.id}`}
+          class="p-4 bg-gradient-to-r from-[#010507] to-[#243642] rounded cursor-pointer hover:opacity-75 transition ease-linear "
+        >
+          <span class="block text-base sm:text-xl font-bold uppercase pb-2">
+            PANEL #{index + 1} {event.title}
+          </span>
+          <span class="block text-xs sm:text-sm text-white ">
+            {event.description.slice(0, 100)}...
+          </span>
+        </a>
+      ))
+    }
+    <div
+      class="relative z-10 p-10 sm:p-20 bg-customPrimary100 rounded scotch-container text-center"
+    >
+      <h2 class="text-2xl sm:text-5xl font-bold">CALL FOR SPEAKERS</h2>
+      <p class="mt-4 max-w-2xl mx-auto pb-12 text-sm sm:text-base">
+        Estamos buscando líderes, innovadores y expertos apasionados para ser
+        parte de nuestro evento. Si tienes una idea disruptiva, conocimientos
+        valiosos o una experiencia que inspire, ¡queremos escucharte!
+      </p>
+      <ButtonLink
+        text="Contáctanos"
+        link="https://docs.google.com/forms/d/e/1FAIpQLScpGsZY90jDzrRt8JS9Oh7T9MBnF0H3Q5QwfixoVlb184k1hw/viewform"
+      />
+      <img
+        src="/singer.png"
+        alt="Background"
+        class="absolute bottom-0 right-9 w-1/4 h-auto object-cover z-0"
       />
     </div>
   </ul>

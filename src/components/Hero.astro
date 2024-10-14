@@ -7,13 +7,13 @@ interface Props {
 }
 
 const {
-    title = "SINERGIAFEST 2024",
-    description = "Conéctate con el futuro de la tecnología, donde la innovación se encuentra con ideas transformadoras para crear un mundo lleno de posibilidades.",
+    title = "SINERGIAFEST",
+    description = "Conéctate con el futuro de la tecnología en el SINERGIAFEST.",
 } = Astro.props;
 ---
 
 <section
-    class="text-center py-24 px-4 sm:px-32 relative min-h-[600px] flex flex-col justify-center items-center"
+    class="text-center py-24 px-4 lg:px-32 relative min-h-[500px] sm:min-h-[650px] flex flex-col justify-center items-center"
 >
     <div class="absolute inset-0 w-full z-10 opacity-50"></div>
     <!-- <img
@@ -26,22 +26,29 @@ const {
     >
         07 DE NOVIEMBRE
     </div> -->
-    <div class="relative z-10 max-w-4xl mx-auto">
-        <h1
-            class="text-3xl md:text-6xl lg:text-8xl font-extrabold text-customPrimary100 uppercase animate__animated animate__wobble"
+    <div class="relative z-10 mx-auto text-center">
+        <h3
+            class="bg-gradient-to-r from-[#010507] to-[#243642] text-white w-fit mx-auto px-4 sm:px-8 py-1 mb-2 rounded-full font-extrabold text-sm sm:text-xl animate__animated animate__wobble"
         >
-            {title}
+            07 de noviembre
+        </h3>
+        <h1
+            class="text-3xl sm:text-6xl md:text-7xl xl:text-9xl font-extrabold text-customPrimary100 uppercase animate__animated animate__wobble z-10"
+        >
+            SINERGIAFEST 2024
         </h1>
         <p
-            class="mt-4 text-sm md:text-base lg:text-lg text-customPrimary100 max-w-3xl mx-auto"
+            class="mt-4 text-sm md:text-base text-customPrimary100 max-w-3xl mx-auto"
         >
-            {description}
+            ¡Conéctate con el futuro de la tecnología, donde la innovación se
+            encuentra con ideas transformadoras para crear un mundo lleno de
+            posibilidades!
         </p>
         <div class="mt-8 flex justify-center gap-4 flex-wrap">
             <ButtonLink text="Regístrate" />
             <a
                 href="/#agenda"
-                class="bg-customPrimary100 text-white py-2 px-6 hover:opacity-85 rounded-sm"
+                class="bg-customPrimary100 text-white py-2 px-6 hover:opacity-85 rounded-sm text-sm sm:text-base"
                 >Agenda</a
             >
         </div>
