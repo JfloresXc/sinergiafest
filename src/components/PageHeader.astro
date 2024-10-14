@@ -96,20 +96,20 @@ import ButtonLink from "./ButtonLink.astro";
   const hamburgerIcon = document.getElementById("hamburgerIcon");
   const closeIcon = document.getElementById("closeIcon");
 
-  menuButton.addEventListener("click", () => {
-    const isOpen = menu.classList.contains("hidden");
+  menuButton?.addEventListener("click", () => {
+    const isOpen = menu?.classList.contains("hidden");
 
     // Toggle visibility of the menu
     if (isOpen) {
-      menu.classList.remove("hidden");
-      menu.classList.add("flex");
+      menu?.classList.remove("hidden");
+      menu?.classList.add("flex");
     } else {
-      menu.classList.add("hidden");
-      menu.classList.remove("flex");
+      menu?.classList.add("hidden");
+      menu?.classList.remove("flex");
     }
 
     // Toggle icons
-    hamburgerIcon.classList.toggle("hidden");
-    closeIcon.classList.toggle("hidden");
+    hamburgerIcon?.classList.toggle("hidden");
+    closeIcon?.classList.toggle("hidden");
   });
 </script>
