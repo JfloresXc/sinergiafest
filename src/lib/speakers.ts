@@ -45,14 +45,14 @@ export const SPEAKERS: Speaker[] = [
     {
         speaker: "Emelyn Alvino",
         profesion:
-            "Corporate Talent Acquisition Analyst at AENZA💙🤍👷🏻‍♀️ | Headhunter | Employer Branding | HR Automation | People Analytics",
+            "Corporate Talent Acquisition Analyst at AENZA💙🤍👷🏻‍♀️ | Headhunter | People Analytics",
         url: "emelyn-alvino.jpeg",
         urlLinkedin: "https://www.linkedin.com/in/cristinaalvino/",
     },
     {
         speaker: "Arturo Simich",
         profesion:
-            "Senior Manager Cibersecurity | Risk Technology Director | Digital Transformation Expert | Startup Mentor",
+            "Senior Manager Cibersecurity | Risk Technology Director | Digital Transformation Expert",
         url: "arturo-simich.jpg",
         urlLinkedin: "https://www.linkedin.com/in/arturosimich/",
     },
@@ -73,14 +73,14 @@ export const SPEAKERS: Speaker[] = [
     {
         speaker: "Ricardo Berrospi",
         profesion:
-            "IT Professional, MSc, MBA with studies in Georgetown University, George Washington University, National University of Engineering (UNI), MIT University, ESAN University",
+            "IT Professional, MSc, MBA with studies in Georgetown University, George Washington University",
         url: "ricardo-berrospi.jpg",
         urlLinkedin: "https://www.linkedin.com/in/ricardo-berrospit/",
     },
     {
         speaker: "Alfredo Amez ",
         profesion:
-            "Top Voice: Business Intelligence | +12k | Growth | CRM | Customer Intelligence | Marketing Analytics | Microsoft Certified Trainer 2021 - 2025",
+            "Top Voice: Business Intelligence | Customer Intelligence | Marketing Analytics | Microsoft Certified Trainer 2021 - 2025",
         url: "alfredo.jpg",
         urlLinkedin: "https://www.linkedin.com/in/afredoamez/",
     },

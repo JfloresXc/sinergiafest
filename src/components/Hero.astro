@@ -5,30 +5,16 @@ interface Props {
     title?: string;
     description?: string;
 }
-
-const {
-    title = "SINERGIAFEST",
-    description = "Conéctate con el futuro de la tecnología en el SINERGIAFEST.",
-} = Astro.props;
 ---
 
 <section
-    class="text-center py-24 px-4 lg:px-32 relative min-h-[500px] sm:min-h-[650px] flex flex-col justify-center items-center"
+    class="text-center py-24 px-4 lg:px-32 relative min-h-screen flex flex-col justify-center items-center"
+    id="hero"
 >
     <div class="absolute inset-0 w-full z-10 opacity-50"></div>
-    <!-- <img
-        src="/banner.jpg"
-        alt="Background Image"
-        class="absolute inset-0 w-full h-full object-cover opacity-40 blur-[3px]"
-    /> -->
-    <!-- <div
-        class="absolute top-[154px] -left-12 bg-customPrimary100 -rotate-45 hidden sm:block sm:text-5xl p-2"
-    >
-        07 DE NOVIEMBRE
-    </div> -->
     <div class="relative z-10 mx-auto text-center">
         <h3
-            class="bg-gradient-to-r from-[#010507] to-[#243642] text-white w-fit mx-auto px-4 sm:px-8 py-1 mb-2 rounded-full font-extrabold text-sm sm:text-xl animate__animated animate__wobble"
+            class="bg-gradient-to-r from-[#010507] to-[#243642] text-white w-fit mx-auto px-4 sm:px-8 py-1 mb-4 rounded-full font-extrabold text-sm sm:text-xl animate__animated animate__wobble"
         >
             07 de noviembre
         </h3>
@@ -54,3 +40,10 @@ const {
         </div>
     </div>
 </section>
+
+<style>
+    #hero {
+        background-color: #ffffff;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cg fill='%23417f83' fill-opacity='0.29'%3E%3Cpath fill-rule='evenodd' d='M5 3.59L1.46.05.05 1.46 3.59 5 .05 8.54l1.41 1.41L5 6.41l3.54 3.54 1.41-1.41L6.41 5l3.54-3.54L8.54.05 5 3.59zM17 2h24v2H17V2zm0 4h24v2H17V6zM2 17h2v24H2V17zm4 0h2v24H6V17z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+</style>
