@@ -3,7 +3,7 @@ import { PANELS } from "../lib/panels";
 import { PRESENTATIONS } from "../lib/presentations";
 import { COMPANIES_LIST, ACTIVITIES } from "../lib/fair";
 import ButtonLink from "./ButtonLink.astro";
-const SECTIONS = ["Paneles", "Feria", "Ponencias"];
+const SECTIONS = ["Paneles", "Feria"];
 const currentSection = 0;
 ---
 
@@ -15,7 +15,7 @@ const currentSection = 0;
       {
         SECTIONS.map((event, index) => (
           <button
-            class={`text-sm sm:text-base event-button p-2 hover:opacity-75 transition ease-linear ${currentSection === index ? "bg-white text-gray-700" : "bg-customPrimary100"}`}
+            class={`text-sm sm:text-base event-button p-2 px-4 hover:opacity-75 transition ease-linear ${currentSection === index ? "bg-white text-gray-700" : "bg-customPrimary100"}`}
           >
             {event}
           </button>
@@ -40,10 +40,10 @@ const currentSection = 0;
       PANELS.map((event, index) => (
         <a
           href={`/panel/${event.id}`}
-          class="p-4 sm:p-6 bg-gradient-to-r from-[#010507] to-[#243642] rounded cursor-pointer hover:opacity-75 transition ease-linear"
+          class={`p-4 sm:p-6 bg-gradient-to-r from-[#010507] to-[#243642] rounded cursor-pointer hover:opacity-75 transition ease-linear ${event?.isABreak ? "pointer-events-none" : ""}`}
         >
           <span class="block text-base sm:text-xl font-bold uppercase ">
-            PANEL #{index + 1} {event.title}
+            {event.title}
           </span>
           <div class="text-sm font-light mt-2 flex flex-wrap gap-2 lg:gap-8 items-center">
             <div class="flex gap-2 items-center">
@@ -55,11 +55,13 @@ const currentSection = 0;
               <span>{event?.address}</span>
             </div>
           </div>
-          <div class="flex justify-end md:justify-normal  mt-2">
-            <span class="text-end font-extralight border-b-2 text-sm">
-              Leer más
-            </span>
-          </div>
+          {!event?.isABreak && (
+            <div class="flex justify-end md:justify-normal  mt-2">
+              <span class="text-end font-extralight border-b-2 text-sm">
+                Leer más
+              </span>
+            </div>
+          )}
         </a>
       ))
     }
@@ -90,7 +92,7 @@ const currentSection = 0;
           <a
             href={event.urlExternal}
             target="_blank"
-            class="p-8 bg-customPrimary100 rounded cursor-pointer hover:opacity-75 transition ease-linear flex flex-col justify-center items-center gap-2 text-center "
+            class="p-8 bg-customPrimary100 cursor-pointer hover:opacity-75 transition ease-linear flex flex-col justify-center items-center gap-2 text-center "
           >
             <img
               src={`/fair/${event.imgPreview}`}
@@ -103,7 +105,7 @@ const currentSection = 0;
         ))
       }
       <div
-        class="relative z-10 p-10 sm:p-20 bg-customPrimary100 rounded scotch-container sm:col-span-2 text-center"
+        class="relative z-10 p-10 sm:p-20 bg-customPrimary100 scotch-container sm:col-span-2 text-center"
       >
         <h2 class="text-2xl sm:text-5xl font-bold">INSCRÍBETE A LA FERIA</h2>
         <p class="mt-4 max-w-2xl mx-auto pb-12 text-sm sm:text-base">
@@ -135,25 +137,6 @@ const currentSection = 0;
         </a>
       ))
     }
-    <div
-      class="relative z-10 p-10 sm:p-20 bg-customPrimary100 rounded scotch-container text-center"
-    >
-      <h2 class="text-2xl sm:text-5xl font-bold">CALL FOR SPEAKERS</h2>
-      <p class="mt-4 max-w-2xl mx-auto pb-12 text-sm sm:text-base">
-        Estamos buscando líderes, innovadores y expertos apasionados para ser
-        parte de nuestro evento. Si tienes una idea disruptiva, conocimientos
-        valiosos o una experiencia que inspire, ¡queremos escucharte!
-      </p>
-      <ButtonLink
-        text="Contáctanos"
-        link="https://docs.google.com/forms/d/e/1FAIpQLScpGsZY90jDzrRt8JS9Oh7T9MBnF0H3Q5QwfixoVlb184k1hw/viewform"
-      />
-      <img
-        src="/singer.png"
-        alt="Background"
-        class="absolute bottom-0 right-9 w-1/4 h-auto object-cover z-0"
-      />
-    </div>
   </ul>
 </section>
 
@@ -162,7 +145,7 @@ const currentSection = 0;
     const eventListElement = document.querySelectorAll(".event-list");
     const eventButtonsElement = document.querySelectorAll(".event-button");
     let currentIndexEventList = 0;
-    const amountOfEvents = 3;
+    const amountOfEvents = 2;
 
     function showEventList({ index = 0 }) {
       eventButtonsElement.forEach((list) => {
