@@ -9,6 +9,7 @@ import ButtonLink from "../components/ButtonLink.astro";
 import Hero from "../components/Hero.astro";
 import SpeakersList from "../components/SpeakersList.astro";
 import ComunnitiesList from "../components/ComunnitiesList.astro";
+import GoogleMap from "../components/GoogleMap.astro";
 ---
 
 <Layout
@@ -29,11 +30,11 @@ import ComunnitiesList from "../components/ComunnitiesList.astro";
     <div id="playlist-contain">
       <div id="agenda" class="min-h-screen">
         <div
-          class="container max-w-screen-lg mx-auto px-4 py-12 sm:py-24 relative"
+          class="container max-w-screen-lg mx-auto px-6 py-12 sm:py-24 relative"
         >
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <h2
-              class="text-4xl my-8 md:text-5xl lg:text-8xl font-bold text-customSecondary100 text-center"
+              class="text-2xl my-8 md:text-5xl lg:text-8xl font-bold text-customSecondary100 text-center"
             >
               Agenda de evento
             </h2>
@@ -46,11 +47,11 @@ import ComunnitiesList from "../components/ComunnitiesList.astro";
 
       <div id="speakers" class="bg-gradient-to-r from-[#243642] to-[#010507]">
         <div
-          class="container max-w-screen-lg mx-auto px-4 py-12 sm:py-24 relative"
+          class="container max-w-screen-lg mx-auto px-6 py-12 sm:py-24 relative"
         >
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <h2
-              class="text-4xl my-8 md:text-5xl lg:text-8xl font-bold text-white text-center"
+              class="text-2xl my-8 md:text-5xl lg:text-8xl font-bold text-white text-center"
             >
               Nuestros speakers
             </h2>
@@ -109,23 +110,7 @@ import ComunnitiesList from "../components/ComunnitiesList.astro";
         </div>
       </section>
 
-      <!-- <div>
-          <div
-            id="speakers"
-            class="container max-w-screen-lg mx-auto px-4 pt-24 relative"
-          >
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <h2
-                class="text-4xl my-8 md:text-5xl lg:text-8xl font-bold text-customSecondary100 text-center"
-              >
-                Nuestros Sponsors
-              </h2>
-              <span></span>
-            </div>
-
-            <SpeakersList />
-          </div>
-        </div> -->
+      <GoogleMap />
 
       <PageFooter />
     </div>
