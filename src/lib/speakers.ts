@@ -84,4 +84,11 @@ export const SPEAKERS: Speaker[] = [
         url: "alfredo.jpg",
         urlLinkedin: "https://www.linkedin.com/in/afredoamez/",
     },
+    {
+        speaker: "Max Zeballos (El capitan)",
+        profesion:
+            "x13 AWS Certified | Awstronaut | AWS Community Builder x3 | AWS re:post Expert",
+        url: "maxz.jpg",
+        urlLinkedin: "https://www.linkedin.com/in/maxcloud/",
+    },
 ];

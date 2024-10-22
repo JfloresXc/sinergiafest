@@ -1,7 +1,7 @@
 ---
 import { PANELS } from "../lib/panels";
 import { PRESENTATIONS } from "../lib/presentations";
-import { COMPANIES_LIST } from "../lib/fair";
+import { COMPANIES_LIST, ACTIVITIES } from "../lib/fair";
 import ButtonLink from "./ButtonLink.astro";
 const SECTIONS = ["Paneles", "Feria", "Ponencias"];
 const currentSection = 0;
@@ -64,42 +64,60 @@ const currentSection = 0;
       ))
     }
   </ul>
-  <ul
-    id="presentations-list"
-    class="event-list hidden grid-cols-1 md:grid-cols-2 gap-4"
-  >
+  <ul id="fair-list" class="event-list hidden grid-cols-1 gap-4 sm:gap-6">
     {
-      COMPANIES_LIST.map((event) => (
-        <a
-          href={event.urlExternal}
-          target="_blank"
-          class="p-8 bg-customPrimary100 rounded cursor-pointer hover:opacity-75 transition ease-linear flex flex-col justify-center items-center gap-2 text-center "
-        >
-          <img
-            src={`/fair/${event.imgPreview}`}
-            class="w-2/4 sm:w-48 rounded-full"
-          />
-          <span class="block text-base sm:text-xl font-bold uppercase pb-2">
+      ACTIVITIES.map((event, index) => (
+        <li class="p-4 sm:p-6 bg-gradient-to-r from-[#010507] to-[#243642] rounded hover:opacity-75 transition ease-linear">
+          <span class="block text-base sm:text-xl font-bold uppercase ">
             {event.title}
           </span>
-        </a>
+          <div class="text-sm font-light mt-2 flex flex-wrap gap-2 lg:gap-8 items-center">
+            <div class="flex gap-2 items-center">
+              <i class="fas fa-clock text-customPrimary20" />
+              <span class="">{event?.date}</span>
+            </div>
+            <div class="flex gap-2 items-center">
+              <i class="fas fa-map-marker-alt text-customPrimary20" />
+              <span>{event?.address}</span>
+            </div>
+          </div>
+        </li>
       ))
     }
-    <div
-      class="relative z-10 p-10 sm:p-20 bg-customPrimary100 rounded scotch-container sm:col-span-2 text-center"
-    >
-      <h2 class="text-2xl sm:text-5xl font-bold">INSCRÍBETE A LA FERIA</h2>
-      <p class="mt-4 max-w-2xl mx-auto pb-12 text-sm sm:text-base">
-        Únete a la feria tecnológica más grande del año, donde la innovación, la
-        creatividad y la tecnología se encuentran. Descubre los últimos avances,
-        interactúa con expertos de la industria y vive experiencias únicas que
-        te conectarán con el futuro.
-      </p>
-      <ButtonLink
-        text="Inscríbete"
-        link="https://docs.google.com/forms/d/e/1FAIpQLSfuzdIH5pwWGAcNyFVHkWLy8fOv5mt8YlacWdghwNFlsdPadg/viewform"
-      />
-    </div>
+    <ul class="grid-cols-1 md:grid-cols-2 gap-4">
+      {
+        COMPANIES_LIST.map((event) => (
+          <a
+            href={event.urlExternal}
+            target="_blank"
+            class="p-8 bg-customPrimary100 rounded cursor-pointer hover:opacity-75 transition ease-linear flex flex-col justify-center items-center gap-2 text-center "
+          >
+            <img
+              src={`/fair/${event.imgPreview}`}
+              class="w-2/4 sm:w-48 rounded-full"
+            />
+            <span class="block text-base sm:text-xl font-bold uppercase pb-2">
+              {event.title}
+            </span>
+          </a>
+        ))
+      }
+      <div
+        class="relative z-10 p-10 sm:p-20 bg-customPrimary100 rounded scotch-container sm:col-span-2 text-center"
+      >
+        <h2 class="text-2xl sm:text-5xl font-bold">INSCRÍBETE A LA FERIA</h2>
+        <p class="mt-4 max-w-2xl mx-auto pb-12 text-sm sm:text-base">
+          Únete a la feria tecnológica más grande del año, donde la innovación,
+          la creatividad y la tecnología se encuentran. Descubre los últimos
+          avances, interactúa con expertos de la industria y vive experiencias
+          únicas que te conectarán con el futuro.
+        </p>
+        <ButtonLink
+          text="Inscríbete"
+          link="https://docs.google.com/forms/d/e/1FAIpQLSfuzdIH5pwWGAcNyFVHkWLy8fOv5mt8YlacWdghwNFlsdPadg/viewform"
+        />
+      </div>
+    </ul>
   </ul>
   <ul id="presentations-list" class="event-list hidden grid-cols-1 gap-4">
     {
@@ -109,7 +127,7 @@ const currentSection = 0;
           class="p-4 bg-gradient-to-r from-[#010507] to-[#243642] rounded cursor-pointer hover:opacity-75 transition ease-linear "
         >
           <span class="block text-base sm:text-xl font-bold uppercase pb-2">
-            PANEL #{index + 1} {event.title}
+            {event.title}
           </span>
           <span class="block text-xs sm:text-sm text-white ">
             {event.description.slice(0, 100)}...
