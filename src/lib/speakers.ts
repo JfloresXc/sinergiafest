@@ -98,4 +98,11 @@ export const SPEAKERS: Speaker[] = [
         url: "raquel-sanchez.jpg",
         urlLinkedin: "https://www.linkedin.com/in/raquelsanchezmejia/",
     },
+    {
+        speaker: "Cesar Ruiz ",
+        profesion:
+            "Technology Manager | Digital Experience en NTT Data Europe & LATAM",
+        url: "cesar-ruiz.jpg",
+        urlLinkedin: "https://www.linkedin.com/in/cmartinrui?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    },
 ];
