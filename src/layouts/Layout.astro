@@ -95,8 +95,10 @@ import "./layout.css";
       }
     </script>
     <script>
+      const support = document.getElementById("not-support");
+
       if (!document.startViewTransition) {
-        document.getElementById("not-support").classList.remove("hidden");
+        support?.classList.remove("hidden");
       }
       document.addEventListener("astro:page-load", () => {
         for (const el of document.querySelectorAll(".el-to-fade")) {

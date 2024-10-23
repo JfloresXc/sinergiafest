@@ -91,4 +91,11 @@ export const SPEAKERS: Speaker[] = [
         url: "maxz.jpg",
         urlLinkedin: "https://www.linkedin.com/in/maxcloud/",
     },
+    {
+        speaker: "Raquel Mayra Sánchez",
+        profesion:
+            "Especialista en Empleabilidad y Talento Humano | Headhunter | Desarrollo y Aprendizaje",
+        url: "raquel-sanchez.jpg",
+        urlLinkedin: "https://www.linkedin.com/in/raquelsanchezmejia/",
+    },
 ];

@@ -51,7 +51,7 @@ const panel = PANELS.find((panelKey) => panelKey.id == id);
         </div>
         <div class="flex">
           <div
-            class="text-sm sm:text-lg mt-8 flex flex-wrap gap-2 lg:gap-8 items-center"
+            class="text-sm sm:text-lg mt-8 flex flex-wrap gap-2 lg:gap-16 items-center"
           >
             <div class="flex gap-2 items-center">
               <i class="fas fa-clock text-customPrimary20"></i>
@@ -82,7 +82,7 @@ const panel = PANELS.find((panelKey) => panelKey.id == id);
                     return (
                       <img
                         src={`/speakers/${urlKey}`}
-                        class="rounded-full size-20"
+                        class={`rounded-full size-20 sm:size-24`}
                       />
                     );
                   })

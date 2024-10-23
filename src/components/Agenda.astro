@@ -37,7 +37,7 @@ const currentSection = 0;
   </div>
   <ul id="panels-list" class="event-list grid grid-cols-1 gap-4 sm:gap-6">
     {
-      PANELS.map((event, index) => (
+      PANELS.map((event) => (
         <a
           href={`/panel/${event.id}`}
           class={`p-4 sm:p-6 bg-gradient-to-r from-[#010507] to-[#243642] rounded cursor-pointer hover:opacity-75 transition ease-linear ${event?.isABreak ? "pointer-events-none" : ""}`}
@@ -198,5 +198,7 @@ const currentSection = 0;
     nextButtonElement?.addEventListener("click", showNextEvent);
   }
 
-  initEvents();
+  document.addEventListener("astro:page-load", () => {
+    initEvents();
+  });
 </script>
