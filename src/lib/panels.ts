@@ -23,7 +23,7 @@ export const PANELS: Panel[] = [
         description:
             "Navegando la Agilidad es una ponencia dirigida a profesionales y equipos de trabajo que buscan aprovechar las metodologías ágiles para optimizar la gestión de proyectos en un entorno empresarial en constante cambio. En esta sesión, exploraremos cómo enfoques como SCRUM y Kanban permiten a los equipos adaptarse rápidamente a nuevas condiciones, mejorar la colaboración y maximizar el valor entregado a los clientes. A través de casos prácticos y experiencias reales, se presentarán los beneficios y desafíos de implementar agilidad, proporcionando herramientas clave para navegar con éxito en la transformación organizacional.",
         title:
-            "Webinar: Navegando la Agilidad",
+            "Ponencia: Navegando la Agilidad",
         date: "09:30 - 10:15 AM Nov 07",
         imgPreview: "panel2.jpeg",
         address: "Auditorio San Pablo II",
@@ -114,7 +114,7 @@ export const PANELS: Panel[] = [
     {
         id: 13,
         title:
-            "Webinar: Iniciando con IA en el desarrollo de Productos Digitales",
+            "Ponencia: Iniciando con IA en el desarrollo de Productos Digitales",
         description: "En esta ponencia, descubrirás cómo la inteligencia artificial (IA) está revolucionando el ciclo de desarrollo de productos digitales. Aprenderás a integrar IA en cada fase del proceso: desde la redacción de requisitos y la creación de diagramas, hasta la elaboración de casos de prueba y la generación de código. Con ejemplos prácticos, exploraremos cómo estas herramientas pueden agilizar el desarrollo de funcionalidades básicas, mejorar la precisión y aumentar la eficiencia del equipo. Esta es tu oportunidad para comprender cómo la IA está transformando el desarrollo digital y cómo puedes aplicarla en tus proyectos.",
         date: "03:45 - 04:15 PM Nov 07",
         address: "Auditorio San Pablo II",
@@ -124,7 +124,7 @@ export const PANELS: Panel[] = [
     {
         id: 14,
         title:
-            "Webinar: Despega tu Carrera: Introducción a Especialidad",
+            "Ponencia: Despega tu Carrera: Introducción a Especialidad",
         description: "Este webinar está diseñado para ayudar a los estudiantes y profesionales a conocer las diversas especialidades dentro del campo de la Ingeniería de Sistemas. Durante la sesión, se explorarán las oportunidades de carrera, las habilidades clave requeridas para cada especialidad y cómo elegir la mejor trayectoria profesional según intereses y fortalezas personales. Además, se proporcionarán consejos prácticos sobre cómo comenzar y avanzar en cada área, con el objetivo de facilitar el desarrollo de una carrera exitosa y bien enfocada.",
         date: "04:15 - 04:45 PM Nov 07",
         imgPreview: "panel3.jpeg",
@@ -134,7 +134,7 @@ export const PANELS: Panel[] = [
     {
         id: 15,
         title:
-            "Webinar: Potencia tu código. IA como aliada para programadores",
+            "Ponencia: Potencia tu código. IA como aliada para programadores",
         description: "En un mundo donde el desarrollo de software avanza a un ritmo vertiginoso, la inteligencia artificial (IA) se ha convertido en una herramienta esencial para los programadores que buscan optimizar su flujo de trabajo, mejorar la calidad del código y reducir el tiempo de desarrollo. En esta ponencia, exploraremos cómo la IA puede transformar la forma en que codificamos, desde asistentes inteligentes y herramientas de depuración automática, hasta generación de código basado en descripciones. Descubre cómo puedes aprovechar el poder de la IA para llevar tus habilidades de programación al siguiente nivel y aumentar tu productividad. ¡No te quedes atrás en la revolución tecnológica!",
         date: "04:45 - 05:15 PM Nov 07",
         imgPreview: "panel3.jpeg",
@@ -144,7 +144,7 @@ export const PANELS: Panel[] = [
     {
         id: 16,
         title:
-            "Webinar: Aplicaciones de Machine Learning en Segmentación Predictiva.",
+            "Ponencia: Aplicaciones de Machine Learning en Segmentación Predictiva.",
         description: "La segmentación predictiva es una técnica de machine learning que clasifica a los clientes en grupos homogéneos según características y comportamientos similares. Esta metodología permite a las empresas personalizar campañas de marketing, identificar clientes potenciales, prevenir la pérdida de clientes (churn), mejorar la experiencia del cliente y anticipar tendencias del mercado. Al analizar datos demográficos y de comportamiento, las organizaciones pueden adaptar sus estrategias para maximizar la efectividad de sus acciones comerciales y aumentar la satisfacción y fidelización del cliente.",
         date: "05:15 - 05:45 PM Nov 07",
         imgPreview: "panel2.jpeg",
@@ -154,7 +154,7 @@ export const PANELS: Panel[] = [
     {
         id: 17,
         title:
-            "Webinar: Comunidad y Tecnología: Construyendo el Futuro Juntos",
+            "Ponencia: Comunidad y Tecnología: Construyendo el Futuro Juntos",
         description: "Esta ponencia te mostrará cómo las tecnologías de Google, como Google Cloud, inteligencia artificial y machine learning, están transformando el mundo digital. Además, conocerás la comunidad de Google, a través de los Google Developer Groups (GDG) y Developer Student Clubs (DSC), que conectan a profesionales y estudiantes para impulsar proyectos innovadores. Descubre cómo estas herramientas y redes pueden potenciar tu carrera.",
         date: "05:45 - 06:15 PM Nov 07",
         imgPreview: "panel1.jpeg",
