@@ -45,7 +45,7 @@ export const PANELS: Panel[] = [
         address: "Auditorio San Pablo II",
         date: "10:30 - 11:15 AM Nov 07",
         imgPreview: "panel1.jpeg",
-        participants: ['carlos-perez.jpg', 'emelyn-alvino.jpeg', 'raquel-sanchez.jpg']
+        participants: ['carlos-perez.jpg', 'emelyn-alvino.jpeg', 'raquel-sanchez.jpeg']
     },
     {
         id: 5,
@@ -63,7 +63,7 @@ export const PANELS: Panel[] = [
         date: "11:30 AM - 12:15 PM Nov 07",
         imgPreview: "panel4.jpeg",
         address: "Auditorio San Pablo II",
-        participants: ['maxz.jpg', 'cesar-ruiz.jpg']
+        participants: ['maxz.jpg', 'cesar-ruiz.jpeg']
 
     },
     {
@@ -165,7 +165,7 @@ export const PANELS: Panel[] = [
         id: 18,
         title:
             "Cierre con grupos artísticos",
-        date: "06:00 - 08:00 PM Nov 07",
+        date: "06:15 - 08:00 PM Nov 07",
         address: "Auditorio San Pablo II",
         isABreak: true
     },

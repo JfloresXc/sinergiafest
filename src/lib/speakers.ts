@@ -95,14 +95,14 @@ export const SPEAKERS: Speaker[] = [
         speaker: "Raquel Mayra Sánchez",
         profesion:
             "Especialista en Empleabilidad y Talento Humano | Headhunter | Desarrollo y Aprendizaje",
-        url: "raquel-sanchez.jpg",
+        url: "raquel-sanchez.jpeg",
         urlLinkedin: "https://www.linkedin.com/in/raquelsanchezmejia/",
     },
     {
         speaker: "Cesar Ruiz ",
         profesion:
             "Technology Manager | Digital Experience en NTT Data Europe & LATAM",
-        url: "cesar-ruiz.jpg",
+        url: "cesar-ruiz.jpeg",
         urlLinkedin: "https://www.linkedin.com/in/cmartinrui?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     },
 ];
