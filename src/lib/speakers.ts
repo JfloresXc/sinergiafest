@@ -73,7 +73,7 @@ export const SPEAKERS: Speaker[] = [
     {
         speaker: "Ricardo Berrospi",
         profesion:
-            "IT Professional, MSc, MBA with studies in Georgetown University, George Washington University",
+            "MsC. Especialista de seguridad a nivel gestión y operaciones",
         url: "ricardo-berrospi.jpg",
         urlLinkedin: "https://www.linkedin.com/in/ricardo-berrospit/",
     },

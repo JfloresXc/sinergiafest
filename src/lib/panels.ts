@@ -21,7 +21,7 @@ export const PANELS: Panel[] = [
     {
         id: 2,
         description:
-            "Navegando la Agilidad es una ponencia dirigida a profesionales y equipos de trabajo que buscan aprovechar las metodologías ágiles para optimizar la gestión de proyectos en un entorno empresarial en constante cambio. En esta sesión, exploraremos cómo enfoques como SCRUM y Kanban permiten a los equipos adaptarse rápidamente a nuevas condiciones, mejorar la colaboración y maximizar el valor entregado a los clientes. A través de casos prácticos y experiencias reales, se presentarán los beneficios y desafíos de implementar agilidad, proporcionando herramientas clave para navegar con éxito en la transformación organizacional.",
+            "Navegando la Agilidad es una ponencia dirigida a profesionales y equipos de trabajo que buscan aprovechar las metodologías ágiles para optimizar la gestión de proyectos en un entorno empresarial en constante cambio. En esta sesión, exploraremos cómo enfoques como SCRUM permiten a los equipos adaptarse rápidamente a nuevas condiciones, mejorar la colaboración y maximizar el valor entregado a los clientes. A través de casos prácticos y experiencias reales, se presentarán los beneficios y desafíos de implementar agilidad, proporcionando herramientas clave para navegar con éxito en la transformación organizacional.",
         title:
             "Ponencia: Navegando la Agilidad",
         date: "09:30 - 10:15 AM Nov 07",
