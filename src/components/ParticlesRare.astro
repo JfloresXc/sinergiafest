@@ -1,0 +1,83 @@
+<div class="particlesContainer alignfull">
+    <div class="bubbles">
+        <span style="--i:11"></span>
+        <span style="--i:4"></span>
+        <span style="--i:5"></span>
+        <span style="--i:16"></span>
+        <span style="--i:9"></span>
+        <span style="--i:8"></span>
+        <span style="--i:3"></span>
+        <span style="--i:11"></span>
+        <span style="--i:17"></span>
+        <span style="--i:7"></span>
+        <span style="--i:10"></span>
+        <span style="--i:12"></span>
+        <span style="--i:8"></span>
+        <span style="--i:3"></span>
+        <span style="--i:11"></span>
+        <span style="--i:3"></span>
+        <span style="--i:14"></span>
+        <span style="--i:5"></span>
+        <span style="--i:5"></span>
+        <span style="--i:8"></span>
+    </div>
+</div>
+
+<style>
+    /* Particles */
+    .particlesContainer {
+        width: 100%;
+        height: auto;
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        padding: 3vh 0 4vh 0;
+    }
+    .bubbles {
+        justify-content: space-evenly;
+        display: flex;
+        position: relative;
+    }
+    .bubbles span {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        background: #83bbff61;
+        margin: 0 4px;
+        border-radius: 50%;
+        box-shadow:
+            0 0 0 10px #83bbff26,
+            0 0 50px #83bbff61,
+            0 0 100px #83bbff61;
+        animation: animate 15s linear infinite;
+        animation-duration: calc(10s / var(--i));
+    }
+    .bubbles span:nth-child(even) {
+        background: #ffffff4f;
+        box-shadow:
+            0 0 0 10px #ffffff14,
+            0 0 50px #ffffff4f,
+            0 0 100px #ffffff4f;
+    }
+    @keyframes animate {
+        0% {
+            transform: translateY(100vh) scale(0);
+        }
+        100% {
+            transform: translateY(-10vh) scale(1);
+        }
+    }
+    @media (min-width: 768px) {
+        .particlesContainer {
+            padding: 60px 0 80px 0;
+        }
+    }
+    @media (max-width: 767px) {
+        .bubbles span {
+            width: 15px;
+            height: 15px;
+        }
+    }
+</style>

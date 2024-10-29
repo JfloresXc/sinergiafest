@@ -41,7 +41,7 @@ export const PANELS: Panel[] = [
         id: 4,
         description:
             "En el competitivo mundo laboral actual, la forma en que los reclutadores y entrenadores de talento evalúan los CVs está evolucionando rápidamente. Este panel discutirá cómo los profesionales de recursos humanos y People Trainers están utilizando nuevas metodologías y herramientas, como la inteligencia artificial y el análisis de datos, para identificar y desarrollar el mejor talento. Abordaremos qué buscan los empleadores en un CV moderno, la importancia de las habilidades blandas frente a las técnicas, y cómo las certificaciones y experiencias no tradicionales están cobrando más valor que nunca.",
-        title: "PANEL #1 Entrenadores del Talento: Descodificando el CV del Futuro",
+        title: "PANEL #1 El Candidato Ideal: Claves para Destacar en el Competitivo Mercado Laboral",
         address: "Auditorio San Pablo II",
         date: "10:30 - 11:15 AM Nov 07",
         imgPreview: "panel1.jpeg",
