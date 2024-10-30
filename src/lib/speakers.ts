@@ -46,7 +46,7 @@ export const SPEAKERS: Speaker[] = [
         speaker: "Cristina Alvino",
         profesion:
             "Analista Corporativo de Búsqueda y Selección en AENZA💙🤍👷🏻‍♀️",
-        url: "cristina.png",
+        url: "cristina.jpg",
         urlLinkedin: "https://www.linkedin.com/in/cristinaalvino/",
     },
     {
