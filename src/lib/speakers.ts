@@ -94,7 +94,7 @@ export const SPEAKERS: Speaker[] = [
     {
         speaker: "Francisco Mego Torres",
         profesion:
-            "CEO de Khalergy",
+            "Gerente de Khalergy, especialista en Eficiencia Energética",
         url: "francisco-mego.png",
         urlLinkedin: "https://www.linkedin.com/in/franciscomego/",
     },
