@@ -92,11 +92,11 @@ export const SPEAKERS: Speaker[] = [
         urlLinkedin: "https://www.linkedin.com/in/maxcloud/",
     },
     {
-        speaker: "Raquel Mayra Sánchez",
+        speaker: "Francisco Mego Torres",
         profesion:
-            "Especialista en Empleabilidad y Talento Humano | Headhunter | Desarrollo y Aprendizaje",
-        url: "raquel-sanchez.jpeg",
-        urlLinkedin: "https://www.linkedin.com/in/raquelsanchezmejia/",
+            "CEO de Khalergy",
+        url: "francisco-mego.png",
+        urlLinkedin: "https://www.linkedin.com/in/franciscomego/",
     },
     {
         speaker: "Cesar Ruiz ",

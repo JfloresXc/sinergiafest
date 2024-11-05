@@ -45,7 +45,7 @@ export const PANELS: Panel[] = [
         address: "Auditorio San Pablo II",
         date: "10:30 - 11:15 AM Nov 07",
         imgPreview: "panel1.jpeg",
-        participants: ['carlos-perez.jpg', 'emelyn-alvino.jpeg', 'raquel-sanchez.jpeg']
+        participants: ['carlos-perez.jpg', 'emelyn-alvino.jpeg']
     },
     {
         id: 5,
@@ -108,7 +108,7 @@ export const PANELS: Panel[] = [
         date: "03:00 - 03:45 PM Nov 07",
         imgPreview: "panel2.jpeg",
         address: "Auditorio San Pablo II",
-        participants: []
+        participants: ['francisco-mego.png']
 
     },
     {
